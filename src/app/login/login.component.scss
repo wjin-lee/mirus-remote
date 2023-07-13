@@ -1,0 +1,68 @@
+@use "../../mixins" as m;
+@use "../../buttons";
+@use "../../colours" as colours;
+
+#login-root {
+    @include m.flexContainer;
+    @include m.fitParent;
+}
+
+#login__container {
+    padding: 4% 3%;
+    background-color: #222833;
+    border-radius: 15px;
+
+    @include m.flexContainer($direction: column, $justify: space-between);
+
+    h1 {
+        margin: 0;
+        letter-spacing: 0.1rem;
+    }
+}
+
+.login__input-container {
+    @include m.fitParent;
+    @include m.flexContainer($direction: column, $gap: 15px);
+}
+
+.login__input-field {
+    width: 85%;
+
+    input {
+        width: 100%;
+        padding: 7px 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline: none;
+        border: 2px solid #414a5b;
+        background-color: #00000000;
+        color: colours.$TEXT_ALT;
+    }
+}
+
+// Only display invalid after being submitted atleast once.
+// The 'submitted' class is added programmatically when login btn is clicked. 
+.login__input-container.submitted input:invalid {
+    border: 2px solid colours.$TEXT_ERR;
+}
+
+.login-status-text {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 0.7rem;
+    color: colours.$TEXT_ERR;
+
+    &::before {
+        content: "* "
+    }
+}
+
+.authorised-container {
+    @include m.fitParent;
+    @include m.flexContainer($direction: column);
+
+    .checkmark {
+        font-size: 2rem;
+        color: colours.$ACCENT_PRIMARY
+    }
+}

@@ -1,0 +1,28 @@
+<div id="login-root">
+    <div id="login__container">
+        <h1>MIRUS Remote</h1>
+
+        <div *ngIf="authorised" class="authorised-container">
+            <span class="checkmark fa-regular fa-circle-check"></span>
+            <span>Login Successful!</span>
+        </div>
+
+        <div *ngIf="!authorised" class="login__input-container" [ngClass]="enableValidation ? 'submitted' : ''">
+            <div class="login__input-field">
+                <input id="login__input_email" type="email" name="email" placeholder="Email" aria-invalid="false"
+                    required [(ngModel)]="email">
+            </div>
+
+            <div class="login__input-field">
+                <input id="login__input_password" type="password" name="password" placeholder="Password" required
+                    [(ngModel)]="password">
+            </div>
+
+            <p class="login-status-text" [ngClass]="enableValidation ? '' : 'hidden'">{{loginFailureReason}}</p>
+        </div>
+
+        <div *ngIf="!authorised" class="btn_primary" (click)="login()">LOGIN</div>
+    </div>
+
+
+</div>

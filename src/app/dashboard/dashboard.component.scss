@@ -1,0 +1,18 @@
+@use "../../mixins" as m;
+
+
+#dashboard-root {
+    @include m.fitParent;
+    @include m.flexContainer();
+}
+
+#dashboard__container {
+    @include m.flexContainer($direction: column);
+    padding-bottom: 20%;
+
+    h1,
+    p {
+        @include m.noSpace;
+        letter-spacing: 0.2rem;
+    }
+}

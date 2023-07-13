@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mirus-remote": {
+      "hosting": {
+        "mirus-remote": [
+          "mirus-remote"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mirus-remote"
+  }
+}

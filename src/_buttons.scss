@@ -1,0 +1,21 @@
+@use "./colours" as colours;
+
+
+// $PRIMARY_COLOUR: #91C4F2;
+
+.btn_primary {
+    padding: 5% 10%;
+    min-width: 150px;
+    border: 1px solid colours.$ACCENT_PRIMARY;
+    border-radius: 5px;
+    text-align: center;
+    letter-spacing: .2rem;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.72, 0.64, 0.16, 0.96);
+
+    &:hover {
+        background-color: colours.$TEXT_ALT;
+        border: 1px solid lighten(colours.$ACCENT_PRIMARY, 15%);
+        cursor: pointer;
+    }
+}

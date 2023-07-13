@@ -1,0 +1,30 @@
+@use "../../mixins" as m;
+@use "../../colours" as colours;
+
+
+#wol-root {
+    @include m.fitParent;
+    @include m.flexContainer();
+}
+
+#wol__container {
+    @include m.flexContainer($direction: column);
+    padding-bottom: 5%;
+}
+
+#wol-btn {
+    aspect-ratio: 1 / 1;
+    background-color: colours.$TEXT_ALT;
+    padding: 7%;
+    border-radius: 50%;
+    color: colours.$ACCENT_PRIMARY;
+
+    &:hover {
+        color: lighten(colours.$ACCENT_PRIMARY, 15%);
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 5rem;
+    }
+}

@@ -1,0 +1,40 @@
+@use "../mixins" as m;
+@use "../colours" as colours;
+
+// -- CONSTANTS -- 
+$NAV_BACKGROUND: #172133;
+$MAIN_BACKGROUND: #101724;
+
+$NAV_BTN_GAP: 30px;
+$NAV_BAR_HEIGHT: 50px;
+
+
+// -- MAIN -- 
+#main {
+    @include m.fitParent;
+    background-color: $MAIN_BACKGROUND;
+    @include m.flexContainer($direction: column, $align: stretch, $gap: 0px);
+
+    #router-content {
+        flex-grow: 1;
+    }
+
+    #navbar {
+        @include m.flexContainer();
+        width: 100%;
+        height: $NAV_BAR_HEIGHT;
+        max-height: $NAV_BAR_HEIGHT;
+        background-color: $NAV_BACKGROUND;
+
+        .navbar__item {
+            height: 100%;
+            aspect-ratio: 1 / 1;
+
+            @include m.flexContainer();
+        }
+
+        .active {
+            color: colours.$ACCENT_PRIMARY;
+        }
+    }
+}

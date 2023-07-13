@@ -1,0 +1,31 @@
+@use "./mixins" as m;
+@use "./colours" as colours;
+
+html,
+body,
+div,
+span,
+ul,
+li {
+    @include m.noSpace;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    color: colours.$TEXT_NORMAL;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    @include m.fitParent;
+}
+
+a {
+    text-decoration: none;
+    color: colours.$TEXT_NORMAL;
+}
+
+.hidden {
+    display: none;
+}
