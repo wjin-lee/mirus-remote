@@ -1,9 +1,9 @@
 {
-  "hosting": [
-    {
-      "target": "mirus-remote",
-      "source": ".",
-      "frameworksBackend": {}
-    }
-  ]
+    "hosting": [
+        {
+            "target": "mirus-remote",
+            "source": ".",
+            "frameworksBackend": {}
+        }
+    ]
 }
