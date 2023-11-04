@@ -4,12 +4,21 @@
 
 #wol-root {
     @include m.fitParent;
-    @include m.flexContainer();
+    @include m.flexContainer($direction: column);
 }
 
 #wol__container {
     @include m.flexContainer($direction: column);
     padding-bottom: 5%;
+}
+
+#wol-server-queue {
+    @include m.flexContainer($direction: column);
+}
+
+.wol-server-queue-item {
+    @include m.flexContainer($direction: row);
+    text-align: center;
 }
 
 #wol-btn {
@@ -26,5 +35,17 @@
 
     span {
         font-size: 5rem;
+    }
+}
+
+#wol-ping-btn {
+    padding: 0.3em 1.35em;
+    border-radius: 15px;
+    background-color: colours.$ACCENT_PRIMARY;
+    color: colours.$TEXT_ALT;
+
+    &:hover {
+        background-color: lighten(colours.$ACCENT_PRIMARY, 15%);
+        cursor: pointer;
     }
 }

@@ -1,8 +1,16 @@
 <div id="wol-root">
     <div id="wol__container">
-        <div id="wol-btn">
+        <div id="wol-btn" (click)="onPowerBtnClick()">
             <span class="fa-solid fa-power-off"></span>
         </div>
-        <span id="wol-status">Wake-on-Lan is ready</span>
+        
+        <span id="wol-status">{{powerStateMessage}}</span>
+
+        <span id="wol-ping-btn" (click)="onPingBtnClick()">Ping {{WOL_TARGET}}</span>
+    </div>
+    <div id="wol-server-queue">
+        <div class="wol-server-queue-item" *ngFor="let req of requestQueue">
+            <span>{{req.timestamp}}: {{req.type}} [{{req.status ? "P" : "Q"}}]</span>
+        </div>
     </div>
 </div>
