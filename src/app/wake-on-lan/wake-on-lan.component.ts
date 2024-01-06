@@ -37,6 +37,9 @@ export class WakeOnLanComponent {
               (req: any) => req.device == this.WOL_TARGET
             );
     });
+
+    // Ping device status on load.
+    this.wolService.sendDeviceStatusUpdateRequest(this.WOL_TARGET);
   }
 
   setPowerState(powerState: PowerState) {
